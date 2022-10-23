@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import logo from '../assets/img/airbnb.png'
 import { HiSearch, HiXCircle } from 'react-icons/hi'
-import { FaGlobe } from 'react-icons/fa'
+import { FaChild, FaGlobe, FaUser, FaUserCircle } from 'react-icons/fa'
 import { HiUserCircle } from 'react-icons/hi'
 import { HiMenu } from 'react-icons/hi'
 import Category from './Category'
@@ -19,6 +19,8 @@ const Header = (props: Props) => {
   const [modal, setModal] = useState(false)
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
+  const [adult, setAdult] = useState<number | undefined>(1);
+  const [child, setChild] = useState<number | undefined>(0);
   const data = [
     {
       id: 1,
@@ -54,6 +56,13 @@ const Header = (props: Props) => {
       endDate: endDate,
       key: 'selection',
     }
+  const reset = () => {
+    setSearch('')
+    setStartDate(new Date())
+    setEndDate(new Date())
+    setAdult(1);
+    setChild(0);
+  }
   const handleSelect = (rangers: any) => {
     setStartDate(rangers.selection.startDate)
     setEndDate(rangers.selection.endDate)
@@ -125,23 +134,30 @@ const Header = (props: Props) => {
           initial={{ y: 500, opacity: 0 }}
           transition={{ duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
-          className="h-fit w-fit bg-white p-2"
+          className="md:h-[100%] h-screen w-full md:w-fit z-4 bg-white p-2 flex flex-col col-span-3 mx-auto"
         >
           <div className="flex flex-row items-center space-x-5">
-            <HiXCircle onClick={() => setSearch("")} className="w-8 h-8" />
+            <HiXCircle onClick={() => setModal(false)} className="w-8 h-8" />
             <div className="flex flex-row items-center space-x-4">
-              <span className="text-lg font-bold cursor-pointer">Places</span>
-              <span className="text-lg font-bold cursor-pointer">
-                Experiences
-              </span>
+              <span className="text-lg font-bold cursor-pointer">{search}</span>
             </div>
           </div>
-          <DateRangePicker
-            ranges={[selectionRange]}
-            minDate={new Date()}
-            rangeColors={["#FD5B61"]}
-            onChange={handleSelect}
-          />
+          <div className="mt-10 w-full">
+            <DateRangePicker
+              ranges={[selectionRange]}
+              minDate={new Date()}
+              rangeColors={["#FD5B61"]}
+              onChange={handleSelect}
+            />
+          </div>
+          <div className="flex">
+            <h1>Adults</h1>
+            <FaUserCircle />
+          </div>
+          <div>
+            <h1>Children</h1>
+            <FaChild />
+          </div>
         </motion.div>
       )}
       {modal && (
@@ -149,21 +165,53 @@ const Header = (props: Props) => {
           initial={{ y: 500, opacity: 0 }}
           transition={{ duration: 1 }}
           animate={{ y: 0, opacity: 1 }}
-          className="md:h-[100%] h-screen w-full md:w-fit z-4 bg-white p-2"
+          className="md:h-[100%] h-screen w-full md:w-fit z-4 bg-white p-2 flex flex-col col-span-3 mx-auto overflow-y-scroll"
         >
           <div className="flex flex-row items-center space-x-5">
             <HiXCircle onClick={() => setModal(false)} className="w-8 h-8" />
             <div className="flex flex-row items-center space-x-4">
-              <span className="text-lg font-bold cursor-pointer">Book Date</span>
+              <span className="text-lg font-bold cursor-pointer">
+                Book Date
+              </span>
             </div>
           </div>
-          <div className='mt-10 w-full flex flex-col col-span-3 mx-auto'>  
+          <div className="mt-5 w-full">
             <DateRangePicker
               ranges={[selectionRange]}
               minDate={new Date()}
               rangeColors={["#FD5B61"]}
               onChange={handleSelect}
             />
+          </div>
+          <div className="flex flex-row items-center justify-between mb-2">
+            <h1 className="font-semibold text-lg">Adults</h1>
+            <div className="flex flex-row items-center space-x-2">
+              <FaUser />
+              <input
+                value={adult}
+                onChange={(e) => setAdult(parseInt(e.target.value))}
+                min={1}
+                type="number"
+                className="w-12 border border-black pl-2 text-lg text-red-500"
+              />
+            </div>
+          </div>
+          <div className="flex flex-row items-center justify-between mb-2">
+            <h1 className="font-semibold text-lg">Children</h1>
+            <div className="flex flex-row items-center space-x-2">
+              <FaChild />
+              <input
+                value={child}
+                onChange={(e) => setChild(parseInt(e.target.value))}
+                min={0}
+                type="number"
+                className="w-12 border border-black pl-2 text-lg text-red-500"
+              /> 
+            </div>
+          </div>
+          <div className='flex mt-2 border-t border-gray-500'>
+            <button onClick={reset} className='flex-grow py-1 px-2'>Cancel</button>
+            <button className='flex-grow py-2 px-2 text-red-500'>Submit</button>
           </div>
         </motion.div>
       )}

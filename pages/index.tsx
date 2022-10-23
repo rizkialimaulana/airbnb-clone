@@ -14,10 +14,6 @@ export default function Home ({exploreData}: any) {
       <Header />
       <main className="max-w-7xl mx-auto px-8 sm:px-16">
         <section className="pt-6">
-          <h2 className="text-center font-bold text-xl pb-6">
-            {" "}
-            Explore Bandung{" "}
-          </h2>
           <div className="flex flex-col space-y-5 md:space-y-0 md:grid md:grid-cols-4">
             {exploreData.searchResults.results.map((item: any) => (
               <Card
