@@ -6,8 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
+    "framer-motion": "^7.6.1",
     "next": "latest",
     "react": "18.1.0",
+    "react-date-range": "^1.4.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.6.0"
   },
