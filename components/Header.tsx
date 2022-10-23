@@ -8,7 +8,7 @@ import { HiMenu } from 'react-icons/hi'
 import Category from './Category'
 import { BsFilter } from 'react-icons/bs'
 import { motion } from 'framer-motion'
-import { DateRangePicker } from 'react-date-range'
+import { DateRangePicker } from 'react-date-range' //@ts-igonre
 import 'react-date-range/dist/styles.css'; 
 import 'react-date-range/dist/theme/default.css';
 
