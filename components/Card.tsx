@@ -3,8 +3,8 @@ import { AiFillStar} from 'react-icons/ai'
 
 const Card = ({name, address, image, landmarks, rating, price}: any) => {
   return (
-    <div className="p-4 border h-fit rounded-lg md:w-full md:h-[450px] border-gray-200 shadow-lg md:shadow-none 
-     md:border-none flex flex-col space-y-2 transition-all hover:scale-105 hover:bg-red-100 w-full cursor-pointer">
+    <div className="p-4 border h-fit rounded-lg md:w-full md:h-[450px] border-gray-200 
+     md:border-none flex flex-col space-y-2 transition-all hover:scale-105 hover:shadow-lg ease-out hover:opacity-80 w-full cursor-pointer">
       <img src={image} className="w-full h-[50%] object-cover rounded-md" />
       <div className="flex flex-col space-y-2">
         <div className="flex flex-row items-center justify-between">

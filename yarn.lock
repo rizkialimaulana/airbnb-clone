@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@badrap/bar-of-progress@^0.2.2":
+  "integrity" "sha512-Ig7MdFQM3OA7Ror5UB1ZutXNZFwxh6YExZvcd6EZloOgcXUR8PKNLH2wUVoeh92NMPnPWr6J/l9Mp+f3z7O7MQ=="
+  "resolved" "https://registry.npmjs.org/@badrap/bar-of-progress/-/bar-of-progress-0.2.2.tgz"
+  "version" "0.2.2"
+
 "@emotion/is-prop-valid@^0.8.2":
   "integrity" "sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA=="
   "resolved" "https://registry.npmjs.org/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz"
