@@ -82,7 +82,7 @@ const Header = ({destination, range, guest}: any) => {
         </div>
       </div>
       {modal && (
-        <Modal />
+        <Modal close={() => setModal(false)}/>
       )}
     </header>
   );

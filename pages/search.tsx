@@ -1,14 +1,14 @@
 import Head from 'next/head';
 import { useRouter } from 'next/dist/client/router';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import Card from '../components/Card';
 import SearchCard from '../components/SearchCard';
 
 export default function search({searchResult, cityGroup}: any) {
   const router = useRouter()
-  const { destination_id, checkin_date, checkout_date, adults_number} =  router.query; 
+  const { destination_id, checkin_date, checkout_date, adults_number} =  router.query;
+  
   return (
     <div className="h-full">
       <Head>
@@ -42,9 +42,6 @@ export default function search({searchResult, cityGroup}: any) {
 }
 
 export async function getServerSideProps() {
-  // const router = useRouter();
-  // const { destination_id, checkin_date, checkout_date, adults_number } =
-  //   router.query;
    const options = {
      method: "GET",
      headers: {
