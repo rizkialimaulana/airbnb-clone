@@ -12,8 +12,8 @@ function Map({ resultSearch }: any) {
     const [viewport, setViewport] = useState({
     width: "100%",
     height: "100%",
-    latitude: center.latitude,
-    longitude: center.longitude,
+    latitude: -6.874282,
+    longitude: 107.619129,
     zoom: 11,
     });
     console.log(coordinates)
