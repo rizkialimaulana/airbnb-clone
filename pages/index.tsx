@@ -28,10 +28,6 @@ export default function Home ({exploreData}: any) {
             ))}
           </div>
         </section>
-
-        <section>
-          <h2></h2>
-        </section>
       </main>
       <footer className='sticky bottom-0'>
         <Footer />
@@ -49,7 +45,7 @@ export async function getStaticProps() {
     },
   };
   const exploreData = await fetch(
-    "https://hotels-com-provider.p.rapidapi.com/v1/hotels/search?checkin_date=2022-10-26&checkout_date=2022-11-1&sort_order=STAR_RATING_HIGHEST_FIRST&destination_id=666143&adults_number=1&locale=in_ID&currency=IDR&guest_rating_min=4",
+    "https://hotels-com-provider.p.rapidapi.com/v1/hotels/search?checkin_date=2022-11-1&checkout_date=2022-12-30&sort_order=STAR_RATING_HIGHEST_FIRST&destination_id=659455&adults_number=1&locale=in_ID&currency=IDR&guest_rating_min=4",
     options
   ).then((res) => res.json());
   

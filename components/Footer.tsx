@@ -21,7 +21,7 @@ const Footer = () => {
           <GrFavorite className="w-8 h-8" />
           <span className="text-xs">Favourite</span>
         </div>
-        <div className="flex flex-col items-center transition-all hover:text-red-500 cursor-pointer">
+        <div className="flex flex-col items-center transition-all hover:text-red-500 cursor-pointer" onClick={() => router.push("/login")}>
           <FaUserCircle className="w-8 h-8" />
           <span className="text-xs">Login</span>
         </div>

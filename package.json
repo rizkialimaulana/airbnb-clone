@@ -10,12 +10,14 @@
     "@types/react-date-range": "^1.4.4",
     "date-fns": "^2.29.3",
     "framer-motion": "^7.6.1",
+    "geolib": "^3.3.3",
+    "mapbox-gl": "^2.10.0",
     "next": "latest",
     "react": "^18.2.0",
-    "react-autocomplete": "^1.8.1",
     "react-date-range": "^1.4.0",
     "react-dom": "18.1.0",
-    "react-icons": "^4.6.0"
+    "react-icons": "^4.6.0",
+    "react-map-gl": "^7.0.19"
   },
   "devDependencies": {
     "@types/node": "17.0.35",

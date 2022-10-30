@@ -23,6 +23,7 @@ const Modal = ({close}: any) => {
     const formatStartDate = format(new Date(startDate), 'dd-MM-yyyy')
     const formatEndDate = format(new Date(endDate), 'dd-MM-yyyy')
     const reset = () => {
+      setSearch('');
       setStartDate(new Date());
       setEndDate(new Date());
       setAdult(1);
