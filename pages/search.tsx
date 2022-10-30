@@ -42,7 +42,7 @@ export default function search({searchResult, cityGroup}: any) {
             ))}
           </div>
         </section>
-         <section className='md:min-w-[600px]'>
+         <section className='hidden md:inline-flex md:min-w-[600px]'>
           <Map resultSearch={searchResult}/>
         </section>
       </main>
